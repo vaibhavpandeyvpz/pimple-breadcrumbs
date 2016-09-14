@@ -1,0 +1,17 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Silex\\Breadcrumbs\\": "src/"
+    }
+  },
+  "description": "Easy breadcrumbs navigation for Pimple powered apps, tested with Silex.",
+  "homepage": "http://vaibhavpandeyvpz.github.io/pimple-breadcrumbs",
+  "keywords": ["pimple", "silex", "breadcrumbs"],
+  "license": "MIT",
+  "name" : "vaibhavpandeyvpz/pimple-breadcrumbs",
+  "require": {
+    "php": ">=5.4.0",
+    "pimple/pimple": "~3.0"
+  },
+  "type": "library"
+}
