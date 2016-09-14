@@ -1,7 +1,7 @@
 # vaibhavpandeyvpz/pimple-breadcrumbs
 Easy breadcrumbs navigation for [Pimple](https://github.com/silexphp/Pimple) powered apps, tested with [Silex](https://github.com/silexphp/Silex).
 
-[![Latest Version](https://img.shields.io/github/release/vaibhavpandeyvpz/pimple-breadcrumbs.svg?style=flat-square)](https://github.com/vaibhavpandeyvpz/pimple-breadcrumbs/releases) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vaibhavpandeyvpz/pimple-breadcrumbs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vaibhavpandeyvpz/pimple-breadcrumbs/?branch=master) [![Total Downloads](https://img.shields.io/packagist/dt/vaibhavpandeyvpz/pimple-breadcrumbs.svg?style=flat-square)](https://packagist.org/packages/vaibhavpandeyvpz/pimple-breadcrumbs) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md) 
+[![Latest Version](https://img.shields.io/github/release/vaibhavpandeyvpz/pimple-breadcrumbs.svg?style=flat-square)](https://github.com/vaibhavpandeyvpz/pimple-breadcrumbs/releases) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vaibhavpandeyvpz/pimple-breadcrumbs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vaibhavpandeyvpz/pimple-breadcrumbs/?branch=master) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/82190a15-8f86-4ec4-8ec5-a606c4e399a7/mini.png)](https://insight.sensiolabs.com/projects/82190a15-8f86-4ec4-8ec5-a606c4e399a7) [![Total Downloads](https://img.shields.io/packagist/dt/vaibhavpandeyvpz/pimple-breadcrumbs.svg?style=flat-square)](https://packagist.org/packages/vaibhavpandeyvpz/pimple-breadcrumbs) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md) 
 
 Install
 -------
