@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pimple-breadcrumbs by vaibhavpandeyvpz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Pimple-breadcrumbs</h1>
+      <h2 class="project-tagline">Easy breadcrumbs navigation for Pimple powered apps, tested with Silex.</h2>
+      <a href="https://github.com/vaibhavpandeyvpz/pimple-breadcrumbs" class="btn">View on GitHub</a>
+      <a href="https://github.com/vaibhavpandeyvpz/pimple-breadcrumbs/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/vaibhavpandeyvpz/pimple-breadcrumbs/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="vaibhavpandeyvpzpimple-breadcrumbs" class="anchor" href="#vaibhavpandeyvpzpimple-breadcrumbs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>vaibhavpandeyvpz/pimple-breadcrumbs</h1>
+
+<p>Easy breadcrumbs navigation for <a href="https://github.com/silexphp/Pimple">Pimple</a> powered apps, tested with <a href="https://github.com/silexphp/Silex">Silex</a>.</p>
+
+<p><a href="https://github.com/vaibhavpandeyvpz/pimple-breadcrumbs/releases"><img src="https://img.shields.io/github/release/vaibhavpandeyvpz/pimple-breadcrumbs.svg?style=flat-square" alt="Latest Version"></a> <a href="https://scrutinizer-ci.com/g/vaibhavpandeyvpz/pimple-breadcrumbs/?branch=master"><img src="https://scrutinizer-ci.com/g/vaibhavpandeyvpz/pimple-breadcrumbs/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a> <a href="https://insight.sensiolabs.com/projects/82190a15-8f86-4ec4-8ec5-a606c4e399a7"><img src="https://insight.sensiolabs.com/projects/82190a15-8f86-4ec4-8ec5-a606c4e399a7/mini.png" alt="SensioLabsInsight"></a> <a href="https://packagist.org/packages/vaibhavpandeyvpz/pimple-breadcrumbs"><img src="https://img.shields.io/packagist/dt/vaibhavpandeyvpz/pimple-breadcrumbs.svg?style=flat-square" alt="Total Downloads"></a> <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></a> </p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<div class="highlight highlight-source-shell"><pre>composer require vaibhavpandeyvpz/pimple-breadcrumbs</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Pimple\</span><span class="pl-c1">Container</span>();</span>
+<span class="pl-s1"><span class="pl-c">// OR</span></span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Silex\</span><span class="pl-c1">Application</span>();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span><span class="pl-k">-&gt;</span>register(<span class="pl-k">new</span> <span class="pl-c1">Pimple\Breadcrumbs\</span><span class="pl-c1">BreadcrumbsServiceProvider</span>());</span></pre></div>
+
+<p>In your <code>twig</code> templates, you can render items as follows (uses <a href="http://getbootstrap.com/">Bootstrap</a>):</p>
+
+<div class="highlight highlight-text-html-twig"><pre>&lt;<span class="pl-ent">ol</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>breadcrumb<span class="pl-pds">"</span></span>&gt;
+    {% <span class="pl-k">for</span> <span class="pl-smi">item</span> <span class="pl-k">in</span> <span class="pl-smi">app</span>.<span class="pl-smi">breadcrumbs</span>.<span class="pl-smi">items</span>() %}
+        {% <span class="pl-k">if</span> <span class="pl-smi">item</span>.<span class="pl-smi">route</span> <span class="pl-k">is</span> <span class="pl-c1">null</span> <span class="pl-k">or</span> <span class="pl-smi">loop</span>.<span class="pl-smi">last</span> %}
+            &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>active<span class="pl-pds">"</span></span>&gt;{{ <span class="pl-smi">item</span>.<span class="pl-smi">text</span><span class="pl-k">|</span>trans }}&lt;/<span class="pl-ent">li</span>&gt;
+        {% <span class="pl-k">else</span> %}
+            &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>{{ path(<span class="pl-smi">item</span>.<span class="pl-smi">route</span>, <span class="pl-smi">item</span>.<span class="pl-smi">params</span>) }}<span class="pl-pds">"</span></span>&gt;{{ <span class="pl-smi">item</span>.<span class="pl-smi">text</span><span class="pl-k">|</span>trans }}&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        {% <span class="pl-k">endif</span> %}
+    {% <span class="pl-k">endfor</span> %}
+&lt;/<span class="pl-ent">ol</span>&gt;</pre></div>
+
+<h2>
+<a id="helper" class="anchor" href="#helper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Helper</h2>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Pimple\Breadcrumbs\BreadcrumbsTrait</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Silex\Application</span> <span class="pl-k">as</span> <span class="pl-c1">Silex</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">Application</span> <span class="pl-k">extends</span> <span class="pl-e">Silex</span></span>
+<span class="pl-s1">{</span>
+<span class="pl-s1">    <span class="pl-k">use</span> <span class="pl-c1">BreadcrumbsTrait</span>;</span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Application</span>();</span>
+<span class="pl-s1"><span class="pl-smi">$app</span><span class="pl-k">-&gt;</span>register(<span class="pl-k">new</span> <span class="pl-c1">Pimple\Breadcrumbs\</span><span class="pl-c1">BreadcrumbsServiceProvider</span>());</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span><span class="pl-k">-&gt;</span>addBreadcrumbItem(<span class="pl-s"><span class="pl-pds">'</span>link_text<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>link_route<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">1</span>]);</span></pre></div>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>See <a href="https://github.com/vaibhavpandeyvpz/pimple-breadcrumbs/blob/master/LICENSE.md">LICENSE.md</a> file.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/vaibhavpandeyvpz/pimple-breadcrumbs">Pimple-breadcrumbs</a> is maintained by <a href="https://github.com/vaibhavpandeyvpz">vaibhavpandeyvpz</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
