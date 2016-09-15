@@ -1,7 +1,7 @@
 {
   "autoload": {
     "psr-4": {
-      "Silex\\Breadcrumbs\\": "src/"
+      "Pimple\\Breadcrumbs\\": "src/"
     }
   },
   "description": "Easy breadcrumbs navigation for Pimple powered apps, tested with Silex.",
